@@ -17,6 +17,7 @@ echo -e "pacman -U hunspell-pt-br-3.2-5-any.pkg.tar.xz"
 echo -e "rm hunspell-pt-br-3.2-5-any.pkg.tar.xz"
 echo -e "setfont"
 
+sudo pacman -S wget
 cd /etc
 wget https://raw.githubusercontent.com/felipefacundes/desktop/master/Arch_linux_Install/locale.conf
 cd /etc/X11/xorg.conf.d/
@@ -47,7 +48,7 @@ passwd
 
 echo -e "Criando usuário e definindo senha"
 
-echo -e "useradd -m -g users -G wheel,storage,power -s /bin/bash johnlaff"
+echo -e "useradd -m -g users -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,users,input -s /bin/bash johnlaff"
 echo -e "usermod -a -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,users,input johnlaff"
 echo -e "passwd johnlaff"
 
@@ -69,6 +70,7 @@ echo -e "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=
 echo -e "grub-mkconfig -o /boot/grub/grub.cfg"
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+grub-mkconfig -o /boot/grub/grub.cfg
 
 echo -e "Instalação do XORG"
 
@@ -111,6 +113,9 @@ echo -e "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 "Instalação de Fontes"
 echo -e "pacman -S $(pacman -Ssq ttf)"
 echo -e "fc-cache"
+
+pacman -S $(pacman -Ssq ttf)
+fc-cache
 
 echo -e "Instalação VirtualBox"
 
