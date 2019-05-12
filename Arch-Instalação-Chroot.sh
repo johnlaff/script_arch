@@ -133,4 +133,14 @@ wget https://github.com/felipefacundes/desktop/blob/master/Arch_linux_Install/ar
 pacman -U yay-9.2.0-1-x86_64.pkg.tar.xz
 rm yay-9.2.0-1-x86_64.pkg.tar.xz
 
+echo -e "Dando permissões para ter acesso de Administrador"
+
+echo -e "sudo pacman -S nano"
+echo -e "nano /etc/sudoers"
+echo -e "Procure pela linha: root ALL=(ALL) ALL"
+echo -e "E logo abaixo inclua o seu usuário assim: UsuárioDaSuaPreferência ALL=(ALL) ALL"
+echo -e "Exemplo de Arquivo:"
+echo -e "root ALL=(ALL) ALL"
+echo -e "UsuárioDaSuaPreferência ALL=(ALL) ALL"
+
 echo -e "Tudo pronto! Agora basta escolher sua interface gráfica e ser feliz."
