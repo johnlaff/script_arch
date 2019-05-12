@@ -144,3 +144,33 @@ echo -e "root ALL=(ALL) ALL"
 echo -e "UsuárioDaSuaPreferência ALL=(ALL) ALL"
 
 echo -e "Tudo pronto! Agora basta escolher sua interface gráfica e ser feliz."
+
+echo -e "Caso quiser instalar o KDE Plasma:"
+
+echo -e "sudo pacman -S kf5-aids kate nomacs gimp krita packagekit packagekit-qt5 discover okular kf5 plasma plasma-wayland-session plasma-mediacenter qtav mpv youtube-dl vlc sddm firefox-i18n-pt-br firefox"
+echo -e "systemctl enable sddm"
+
+echo -e "Caso quiser instalar o Cinnamon:"
+
+echo -e "sudo pacman -S cinnamon lightdm-gtk-greeter lightdm gimp viewnior firefox firefox-i18n-pt-br"
+echo -e "systemctl enable lightdm"
+
+echo -e "Caso quiser instalar o GNOME:"
+
+echo -e "sudo pacman -S gnome gnome-extra gnome-shell gdm gimp viewnior firefox firefox-i18n-pt-br"
+echo -e "systemctl enable gdm"
+
+echo -e "Caso quiser instalar o DEEPIN:"
+
+echo -e "sudo pacman -S deepin deepin-extra lightdm-gtk-greeter lightdm gimp viewnior firefox firefox-i18n-pt-br"
+echo -e "systemctl enable lightdm"
+
+echo -e "Caso quiser instalar o XFCE:"
+
+echo -e "sudo pacman -S xfce4 xfce4-goodies lightdm-gtk-greeter lightdm gimp viewnior firefox firefox-i18n-pt-br"
+echo -e "systemctl enable lightdm"
+
+echo -e "Caso quiser instalar o MATE:"
+
+echo -e "sudo pacman -S mate mate-extra lightdm-gtk-greeter lightdm gimp viewnior firefox firefox-i18n-pt-br"
+echo -e "systemctl enable lightdm"
