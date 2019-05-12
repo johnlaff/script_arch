@@ -10,8 +10,6 @@ loadkeys br-abnt2
 # nano /etc/locale.gen
 # locale-gen && export LANG=pt_BR.UTF-8
 
-#
-
 echo -e "Formatação das Partições"
 
 echo -e "mkfs.fat -F32 -n BOOT /dev/sda1"
