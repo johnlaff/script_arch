@@ -2,8 +2,9 @@
 
 echo -e "Primeiro de Tudo Particione o HD"
 echo -e "Crie sda1 500MB para boot"
-echo -e "Crie sda2 para raiz /"
+echo -e "Crie sda2 para home"
 echo -e "Crie sda3 512MB ou 3GB para swap / 3GB se quiser o modo hibernar"
+echo -e "Crie sda4 20GB ou 30GB para /root"
 loadkeys br-abnt2
 sudo cfdisk /dev/sda
 # nano /etc/locale.gen
@@ -13,19 +14,23 @@ echo -e "Formatação das Partições"
 
 echo -e "mkfs.fat -F32 -n BOOT /dev/sda1"
 echo -e "mkfs.ext4 /dev/sda2"
+echo -e "mkfs.ext4 /dev/sda4"
 echo -e "mkswap /dev/sda3"
 echo -e "swapon /dev/sda3"
 
 mkfs.fat -F32 -n BOOT /dev/sda1
 mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/sda4
 mkswap /dev/sda3
 swapon /dev/sda3
 
 echo -e "Montagem das Partições e Criação da Home"
 
+echo -e "mount mount /dev/sda4 /mnt"
 echo -e "mkdir -p /mnt/home && mount /dev/sda2 /mnt/home"
 echo -e "mkdir -p /mnt/boot && mount /dev/sda1 /mnt/boot"
 
+mount /dev/sda4 /mnt
 mkdir -p /mnt/home && mount /dev/sda2 /mnt/home
 mkdir -p /mnt/boot && mount /dev/sda1 /mnt/boot
 
