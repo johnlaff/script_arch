@@ -29,17 +29,16 @@ echo -e "mkdir -p /mnt/boot && mount /dev/sda1 /mnt/boot"
 mkdir -p /mnt/home && mount /dev/sda2 /mnt/home
 mkdir -p /mnt/boot && mount /dev/sda1 /mnt/boot
 
-echo -e "Pacotes necessários"
-echo -e "pacman -Syy archlinux-keyring arch-install-scripts btrfs-progs"
-
-pacman -Syy archlinux-keyring arch-install-scripts btrfs-progs
-
-
 echo -e "Instalação da base do sistema"
 
 echo -e "pacstrap /mnt base base-devel"
 
 pacstrap /mnt base base-devel
+
+echo -e "Pacotes necessários"
+echo -e "pacman -Syy archlinux-keyring arch-install-scripts btrfs-progs"
+
+pacman -Syy archlinux-keyring arch-install-scripts btrfs-progs
 
 echo -e "Gerar Fstab"
 
