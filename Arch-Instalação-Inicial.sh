@@ -4,9 +4,8 @@ echo -e "Primeiro de Tudo Particione o HD"
 echo -e "Crie sda1 500MB para boot"
 echo -e "Crie sda2 para raiz /"
 echo -e "Crie sda3 512MB ou 3GB para swap / 3GB se quiser o modo hibernar"
-sudo fdisk -l
-sudo gparted
 loadkeys br-abnt2
+sudo cfdisk /dev/sda
 # nano /etc/locale.gen
 # locale-gen && export LANG=pt_BR.UTF-8
 
